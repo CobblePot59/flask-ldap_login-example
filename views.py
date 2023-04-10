@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for, session
+from flask import render_template, request, redirect, url_for, session, flash
 from app import app, ldap
 from decor import login_required
 
@@ -21,8 +21,8 @@ def login():
         session.update({'status':True, 'login':login})
         return redirect(url_for('index'))
     else:
-        return 'Bad login'
-
+        flash('Bad Login', 'danger')
+        return redirect(url_for('login'))
 
 @app.route("/logout", methods=['GET'])
 def logout():
