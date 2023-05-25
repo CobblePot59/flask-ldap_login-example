@@ -2,6 +2,8 @@ from datetime import timedelta
 
 SECRET_KEY = 'fneurhfjpwejfnldusnfiwbsocjdpscouwehdnfbwnojno'
 PERMANENT_SESSION_LIFETIME = timedelta(minutes=15)
+SESSION_COOKIE_SAMESITE = "None"
+SESSION_COOKIE_SECURE = True
 
 LDAP_SCHEMA = 'ldaps'
 LDAP_DOMAIN = 'cobblepot59.int'
